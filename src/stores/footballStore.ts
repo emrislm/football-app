@@ -4,15 +4,10 @@ import axios from 'axios'
 
 export const useFootballStore = defineStore('football', () => {
   // VARS
-  const countries = ref([])
   const leagues = ref([])
   const standings = ref([])
 
   // GETTERS
-  const getCountries = computed(() => {
-    return countries
-  })
-
   const getLeagues = computed(() => {
     return leagues
   })
@@ -27,20 +22,30 @@ export const useFootballStore = defineStore('football', () => {
     try {
       if (leagues.value.length > 0) return
       const leaguesListResult = await axios.get(baseUrl)
-      leagues.value = leaguesListResult.data
+      leagues.value = leaguesListResult.data.data.map((obj: any) => {
+        return {
+          name: obj.name,
+          value: obj.id
+        }
+      })
     } catch (error) {
       console.error(error)
     }
   }
 
-  async function fetchStandings(country: string, season: number) {
-    const baseUrl = `https://api-football-standings.azharimm.dev/leagues/${country}.1/standings?season=${season}&sort=asc`
-    console.log(baseUrl)
+  async function fetchStandings(country: string) {
+    const baseUrl = `https://api-football-standings.azharimm.dev/leagues/${country}/standings?season=2023&sort=asc`
+    try {
+      if (standings.value.length > 0) return
+      const standingsListResult = await axios.get(baseUrl)
+      standings.value = standingsListResult.data.data.standings
+      console.log(standings.value)
+    } catch (error) {
+      console.error(error)
+    }
   }
 
   return {
-    countries,
-    getCountries,
     leagues,
     standings,
     getLeagues,

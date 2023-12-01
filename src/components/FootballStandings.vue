@@ -1,11 +1,11 @@
 <template>
   <div class="container">
-    <h1 style="background-color: aqua;">Table</h1>
+    <h1>Table</h1>
 
     <div class="containerInput">
       <div class="inputGroup">
-        <label for="username">Country</label>
-        <InputText type="text" v-model="country" />
+        <Dropdown v-model="selectedLeague" :options="allLeagues" optionLabel="name" placeholder="Select a City"
+          @change="getTable()" />
       </div>
 
       <div class="inputGroup">
@@ -17,15 +17,24 @@
 </template>
   
 <script setup lang="ts">
-import { ref } from "vue";
+import { computed, ref } from "vue";
 import { useFootballStore } from '@/stores/footballStore';
 
 const footballStore = useFootballStore();
 
-const country = ref("");
+const selectedLeague = ref("")
 const season = ref(0);
 
+const allLeagues = computed(() => {
+  return footballStore.getLeagues.value;
+});
 
+const getTable = () => {
+  let league = selectedLeague.value;
+  footballStore.fetchStandings(league.value);
+}
+
+footballStore.fetchAllLeagues();
 </script>
 
 <style scoped>
@@ -38,9 +47,9 @@ h1 {
   flex-direction: column;
 
   width: 70%;
-  padding: 24px 48px;
+  padding: 24px 96px;
 
-  background-color: rgb(160, 0, 0);
+  background-color: white;
 }
 
 .containerInput {

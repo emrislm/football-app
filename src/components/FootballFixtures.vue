@@ -1,7 +1,7 @@
 <template>
   <div class="container">
-    <h1 style="background-color: aqua;">Fixtures</h1>
-    <p style="background-color: aquamarine;">something again</p>
+    <h1>Fixtures</h1>
+    <p>something again</p>
   </div>
 </template>
   
@@ -21,6 +21,6 @@ h1 {
   width: 30%;
   padding: 24px 48px;
 
-  background-color: blue;
+  background-color: lightgrey;
 }
 </style>
