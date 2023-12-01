@@ -40,7 +40,7 @@ h1 {
   width: 70%;
   padding: 24px 48px;
 
-  background-color: red;
+  background-color: rgb(160, 0, 0);
 }
 
 .containerInput {
