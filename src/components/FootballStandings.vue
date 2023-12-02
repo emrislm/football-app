@@ -1,10 +1,9 @@
 <template>
-  <div class="container">
-    <div class="containerHeader">
-      <h1>Table</h1>
+  <div class="flex flex-column w-9 h-full min-h-full p-8 bg-blue-500">
+    <div class="flex flex-row justify-content-between">
+      <h1 class="mt-0 mb-5">Table</h1>
       <Dropdown v-model="selectedLeague" :options="allLeagues" optionLabel="name" placeholder="Select a league"
-        @change="getTable()" class="dropdown-leagues" />
-      <!-- <div class="invisible"></div> -->
+        @change="getTable()" class="w-6 h-3rem align-items-center" />
     </div>
 
     <DataTable :value="allStandings" tableStyle="border: none" class="p-datatable-normal">
@@ -45,37 +44,4 @@ const getTable = () => {
 }
 </script>
 
-<style scoped>
-h1 {
-  margin-top: 0;
-  margin-bottom: 48px;
-}
-
-.container {
-  display: flex;
-  flex-direction: column;
-
-  width: 70%;
-  min-height: 100vh;
-  height: fit-content;
-  padding: 24px 175px 96px 175px;
-
-  background-color: white;
-}
-
-.containerHeader {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
-
-.invisible {
-  visibility: hidden;
-}
-
-.dropdown-leagues {
-  width: 500px;
-  height: 40px;
-  align-items: center;
-}
-</style>
+<style scoped></style>

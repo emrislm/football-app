@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="flex flex-row h-screen">
     <FootballStandings />
     <FootballFixtures />
   </div>
@@ -16,10 +16,10 @@ body {
   padding: 0;
 }
 
-.container {
+/* .container {
   display: flex;
   flex-direction: row;
   width: 100%;
   height: 100vh;
-}
+} */
 </style>

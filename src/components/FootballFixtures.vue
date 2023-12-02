@@ -1,6 +1,6 @@
 <template>
-  <div class="container">
-    <h1>Fixtures</h1>
+  <div class="flex flex-column w-3 h-full min-h-full p-8 bg-red-500">
+    <h1 class="mt-0 mb-5">Fixtures</h1>
     <p>something again</p>
   </div>
 </template>
@@ -9,20 +9,4 @@
 
 </script>
 
-<style scoped>
-h1 {
-  margin-top: 0;
-  margin-bottom: 48px;
-}
-
-.container {
-  display: flex;
-  flex-direction: column;
-
-  width: 30%;
-  min-height: 100vh;
-  padding: 24px 48px;
-
-  background-color: lavender;
-}
-</style>
+<style scoped></style>

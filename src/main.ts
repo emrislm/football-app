@@ -14,7 +14,8 @@ import InputText from 'primevue/inputtext'
 import InputNumber from 'primevue/inputnumber'
 import Dropdown from 'primevue/dropdown'
 
-import 'primevue/resources/themes/lara-light-green/theme.css'
+import 'primevue/resources/themes/mira/theme.css'
+import 'primeflex/primeflex.css'
 
 const app = createApp(App)
 
