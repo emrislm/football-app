@@ -11,7 +11,8 @@
 
 <style scoped>
 h1 {
-  margin-bottom: 24px;
+  margin-top: 0;
+  margin-bottom: 48px;
 }
 
 .container {
@@ -19,8 +20,9 @@ h1 {
   flex-direction: column;
 
   width: 30%;
+  min-height: 100vh;
   padding: 24px 48px;
 
-  background-color: lightgrey;
+  background-color: lavender;
 }
 </style>

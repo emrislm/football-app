@@ -11,7 +11,7 @@ import FootballFixtures from "@/components/FootballFixtures.vue";
 </script>
 
 <style>
-* {
+body {
   margin: 0;
   padding: 0;
 }

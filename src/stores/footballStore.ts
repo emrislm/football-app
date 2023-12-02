@@ -36,10 +36,18 @@ export const useFootballStore = defineStore('football', () => {
   async function fetchStandings(country: string) {
     const baseUrl = `https://api-football-standings.azharimm.dev/leagues/${country}/standings?season=2023&sort=asc`
     try {
-      if (standings.value.length > 0) return
       const standingsListResult = await axios.get(baseUrl)
-      standings.value = standingsListResult.data.data.standings
-      console.log(standings.value)
+      standings.value = standingsListResult.data.data.standings.map((standing: any) => {
+        return {
+          place: standing.stats[10].value,
+          name: standing.team.name,
+          gamesPlayed: standing.stats[0].value,
+          wins: standing.stats[7].value,
+          draws: standing.stats[6].value,
+          losses: standing.stats[1].value,
+          points: standing.stats[3].value
+        }
+      })
     } catch (error) {
       console.error(error)
     }
