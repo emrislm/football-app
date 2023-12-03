@@ -26,6 +26,7 @@ const footballStore = useFootballStore();
 
 onMounted(() => {
   footballStore.fetchAllLeagues();
+  footballStore.fetchStandings('tur.1');
 });
 
 const selectedLeague = ref("");
