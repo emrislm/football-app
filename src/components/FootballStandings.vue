@@ -38,9 +38,9 @@ const allStandings = computed(() => {
 });
 
 const getTable = () => {
-  console.log("changed");
-  let league = selectedLeague.value;
-  footballStore.fetchStandings(league.value);
+  console.log("getTable()");
+  let league: any = selectedLeague.value;
+  footballStore.fetchStandings(league.countryCode);
 }
 </script>
 

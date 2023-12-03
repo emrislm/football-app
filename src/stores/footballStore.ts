@@ -22,10 +22,10 @@ export const useFootballStore = defineStore('football', () => {
     try {
       if (leagues.value.length > 0) return
       const leaguesListResult = await axios.get(baseUrl)
-      leagues.value = leaguesListResult.data.data.map((obj: any) => {
+      leagues.value = leaguesListResult.data.data.map((league: any) => {
         return {
-          name: obj.name,
-          value: obj.id
+          name: league.name,
+          countryCode: league.id
         }
       })
     } catch (error) {
