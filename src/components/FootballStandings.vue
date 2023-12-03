@@ -1,13 +1,13 @@
 <template>
-  <div class="flex flex-column w-9 h-full min-h-full p-8 bg-blue-500">
-    <div class="flex flex-row justify-content-between">
-      <h1 class="mt-0 mb-5">Table</h1>
+  <div class="col md:col-9 p-5 md:p-8 bg-white">
+    <div class="flex flex-column md:flex-row justify-content-between mb-3 md:mb-5">
+      <h1 class="mt-0 mb-3 md:mb-0">Table</h1>
       <Dropdown v-model="selectedLeague" :options="allLeagues" optionLabel="name" placeholder="Select a league"
-        @change="getTable()" class="w-6 h-3rem align-items-center" />
+        @change="getTable()" class="col-12 md:col-6 md:h-3rem align-items-center" />
     </div>
 
-    <DataTable :value="allStandings" tableStyle="border: none" class="p-datatable-normal">
-      <Column field="place" header="#"></Column>
+    <DataTable :value="allStandings" class="p-datatable-sm">
+      <Column field="rank" header="#"></Column>
       <Column field="name" header="Name"></Column>
       <Column field="gamesPlayed" header="GP"></Column>
       <Column field="wins" header="W"></Column>

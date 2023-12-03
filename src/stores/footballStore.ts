@@ -39,7 +39,7 @@ export const useFootballStore = defineStore('football', () => {
       const standingsListResult = await axios.get(baseUrl)
       standings.value = standingsListResult.data.data.standings.map((standing: any) => {
         return {
-          place: standing.stats[10].value,
+          rank: standing.stats[10].value,
           name: standing.team.name,
           gamesPlayed: standing.stats[0].value,
           wins: standing.stats[7].value,

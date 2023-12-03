@@ -1,7 +1,7 @@
 <template>
-  <div class="flex flex-row h-screen">
+  <div class="grid grid-nogutter justify-content-center w-full min-h-screen">
     <FootballStandings />
-    <FootballFixtures />
+    <!-- <FootballFixtures /> -->
   </div>
 </template>
 
@@ -15,11 +15,4 @@ body {
   margin: 0;
   padding: 0;
 }
-
-/* .container {
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-  height: 100vh;
-} */
 </style>
